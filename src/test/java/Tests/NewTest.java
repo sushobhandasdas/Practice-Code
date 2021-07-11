@@ -44,7 +44,7 @@ public class NewTest {
 	@FindBy(xpath = "//*[contains(.,'covid')]") 
 	static WebElement CovidNum;
 	
-  @Test(invocationCount = 10)
+  @Test(invocationCount = 1)
   public void f() {
 	  NewTest obj = new NewTest();
 
