@@ -12,6 +12,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -47,8 +48,9 @@ public class NewTest {
   @Test(invocationCount = 1)
   public void f() {
 	  NewTest obj = new NewTest();
-
-	  WebDriver driver=new ChromeDriver();
+	  ChromeOptions op = new ChromeOptions();
+		op.setHeadless(true);
+	  WebDriver driver=new ChromeDriver(op);
 	  driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	  driver.get("https://google.com");
 	  driver.findElement(By.xpath("//input[@name='q']")).sendKeys("covid19india"+Keys.ENTER);
